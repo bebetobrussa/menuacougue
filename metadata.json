@@ -1,0 +1,6 @@
+{
+  "name": "Menu Digital para Açougue & Painel de Preços em Tempo Real",
+  "description": "Painel de menu digital para TVs de açougue e casa de carnes com destaque para Oferta do Dia e painel administrativo para atualização de preços e promoções em tempo real.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

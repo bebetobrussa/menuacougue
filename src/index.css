@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-bebas {
+    font-family: 'Bebas Neue', 'Oswald', sans-serif;
+  }
+  .font-condensed {
+    font-family: 'Oswald', sans-serif;
+  }
+  .font-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Realistic rustic wood texture gradients for digital board */
+.bg-wood-dark {
+  background-color: #14110f;
+  background-image: 
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.2) 0px, rgba(255,255,255,0.02) 2px, transparent 4px, transparent 32px),
+    linear-gradient(180deg, #1d1815 0%, #151210 50%, #0d0a09 100%);
+}
+
+.bg-wood-plank {
+  background-color: #1a1614;
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0px, transparent 1px, transparent 2px),
+    linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(255,255,255,0.03) 10%, rgba(0,0,0,0.1) 50%, rgba(255,255,255,0.02) 90%, rgba(0,0,0,0.4) 100%),
+    linear-gradient(180deg, #241e1b 0%, #171311 100%);
+}
+
+.bg-wood-frame {
+  background: linear-gradient(135deg, #2f2520 0%, #1c1613 50%, #29201a 100%);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -2px 4px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.8);
+}
+
+.bg-wood-header-plaque {
+  background: linear-gradient(180deg, #2a221d 0%, #181310 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 2px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Night Mode Dark Palette for Store Closing */
+.bg-wood-dark-night {
+  background-color: #080605;
+  background-image: 
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.5) 0px, rgba(255,255,255,0.01) 2px, transparent 4px, transparent 32px),
+    linear-gradient(180deg, #0f0c0a 0%, #080605 50%, #040302 100%);
+}
+
+.bg-wood-plank-night {
+  background-color: #0d0a08;
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.35) 0px, transparent 1px, transparent 2px),
+    linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0.01) 10%, rgba(0,0,0,0.3) 50%, rgba(255,255,255,0.01) 90%, rgba(0,0,0,0.6) 100%),
+    linear-gradient(180deg, #130f0d 0%, #090706 100%);
+}
+
+.bg-wood-frame-night {
+  background: linear-gradient(135deg, #14100d 0%, #090706 50%, #120e0b 100%);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.05), inset 0 -2px 4px rgba(0,0,0,0.95), 0 4px 16px rgba(0,0,0,0.95);
+}
+
+.metal-rivet-night {
+  background: radial-gradient(circle at 35% 35%, #64748b 0%, #334155 45%, #1e293b 80%, #0f172a 100%);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.9), inset 0 1px 1px rgba(255,255,255,0.2);
+}
+
+/* Metal screw rivet */
+.metal-rivet {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, #e2e8f0 0%, #94a3b8 45%, #475569 80%, #1e293b 100%);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.8), inset 0 1px 1px rgba(255,255,255,0.6);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metal-rivet::after {
+  content: '';
+  width: 8px;
+  height: 1.5px;
+  background: #1e293b;
+  border-radius: 1px;
+  box-shadow: 0 0.5px 0 rgba(255,255,255,0.3);
+}
+
+/* Ticker scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Flash highlight animation when price updates in real time */
+@keyframes priceFlash {
+  0% { background-color: rgba(245, 158, 11, 0.4); transform: scale(1.02); }
+  50% { background-color: rgba(245, 158, 11, 0.2); }
+  100% { background-color: transparent; transform: scale(1); }
+}
+
+.animate-price-flash {
+  animation: priceFlash 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Shake animation for invalid PIN */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
